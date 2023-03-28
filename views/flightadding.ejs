@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p> Inserting flights </p>
+    <form method="post" action="/addingflights">
+
+  
+        <label for=" flightid">
+            <input type="string" placeholder="flightid" name="fid">
+        </label>
+        <label for="airlineid">
+            <input type="string" placeholder="airline id" name="aid">
+        </label>
+        <label for="From">
+            <input type="string" placeholder="Boarding point" name="bp">
+        </label>
+        <label for="To">
+            <input type="string" placeholder="Destination point" name="dp">
+        </label>
+        <label for="Dtime">
+            <input type="string" placeholder="Departure time" name="dtime">
+        </label>
+        <label for="Atime">
+            <input type="string" placeholder="Arrival time" name="atime">
+        </label>
+        <label for="duaration">
+            <input type="string" placeholder="duration" name="dur">
+        </label>
+        <label for="availableseats">
+            <input type="string" placeholder="available seats" name="aseats">
+        </label>
+        <label for="eprice">
+            <input type="string" placeholder="eprice" name="eprice">
+        </label>
+        <label for="bprice">
+            <input type="string" placeholder="bprice" name="bprice">
+        </label>
+        <input type="submit" value="Enter">
+    </form>
+
+    <p>Deleting flights</p>
+    <form method="post" action="/deleteflight">
+        <input type="string" placeholder="flightid" name="fid">
+        <input type="submit" value="Delete">
+    </form>
+
+    <p>Updating flights</p>
+    <form method="post" action="/updateflight">
+        <input type="string" placeholder="flightid" name="flid">
+
+        <input type="string" placeholder="property" name="prop">
+        <input type="string" placeholder="value" name="val">
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

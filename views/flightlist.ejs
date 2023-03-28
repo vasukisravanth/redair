@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mydiv">
+        <% if(flightlist.length==0){%>
+          <h1 style="color:red" class="center">OOPS!!NO FLIGHTS FOUND.</h1>
+          <% }else{%>
+            <h1 id="#previousBooking" class="center">Flight LIST</h1>
+            <br>
+            <div class="box">
+              <table class="table">
+                <thead class="table-head">
+                  <tr>
+                    <th scope="col">flightid</th>
+                    <th scope="col">airlineid</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">eprice</th>
+                    <th scope="col">bprice</th>
+                    
+                  </tr>
+                </thead>
+                <% for(var i=0;i<flightlist.length; i++) { %>
+                  <div class="item">
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <%= i+1 %>
+                        </th>
+                        <td><b>
+                            <%=flightlist[i].flightid%>
+                          </b></td>
+                        <td><b>
+                            <%=flightlist[i].airlineid%>
+                          </b></td>
+                          <td><b>
+                            <%=flightlist[i].From%>
+                          </b></td>
+                          <td><b>
+                            <%=flightlist[i].To%>
+                          </b></td>
+                          <td><b>
+                            <form method="post" action="/paye/<%=flightlist[i].flightid%>/<%=flightlist[i].eprice%>/<%=flightlist[i].From%>/<%=flightlist[i].To%>">
+                                <%=flightlist[i].eprice%>
+                                <input type="submit" value="eprice">
+        
+
+                            </form>
+                           
+                          </b></td>
+                          <td><b>
+                            <form method="post" action="/payb/<%=flightlist[i].bprice%>">
+                                <%=flightlist[i].bprice%>
+
+                            </form>
+                           
+                          </b></td>
+                        <td><b>*******</b></td>
+                      </tr>
+                  </div>
+                  <%} %>
+              </table>
+            </div>
+            <% }%>
+      </div>
+</body>
+</html>
